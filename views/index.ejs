@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <div style="display: grid; gap: 1rem">
+      <% for (let i=0; i < messages.length; i++) { %>
+      <div style="border: 1px solid; border-radius: 1rem">
+        <p><b>Text:</b> <%= messages[i].text %></p>
+        <p><b>User:</b> <%= messages[i].user %></p>
+        <p><b>Added:</b> <%= messages[i].added %></p>
+      </div>
+      <% } %>
+    </div>
+
+    <div>
+      <form action="/new" method="post">
+        <label for="text">Text: </label>
+        <input id="text" name="text" type="text" value="" placeholder="User"/>
+
+        <label for="user">User: </label>
+        <input id="user" name="user" type="text" value="" placeholder="User"/>
+
+        <label for="added">Added: </label>
+        <input id="added" name="added" type="text" value="" placeholder="Added"/>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
